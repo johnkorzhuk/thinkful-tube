@@ -24,7 +24,7 @@ module.exports = {
       }]
     }]
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: `${srcDir}/index.html`
