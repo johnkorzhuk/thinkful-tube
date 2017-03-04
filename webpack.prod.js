@@ -36,7 +36,7 @@ module.exports = {
     new ExtractTextPlguin('style.css'),
     new CleanWebpackPlugin([ 'dist' ]),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor', 'manifest']
     })
   ]
 }
