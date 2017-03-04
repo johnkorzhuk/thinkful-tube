@@ -1,0 +1,2 @@
+webpackJsonp([0],[,function(t,n){},function(t,n,o){"use strict";function u(t){return t&&t.__esModule?t:{default:t}}var e=o(0),l=u(e);o(1),(0,l.default)(function(){(0,l.default)("#root").html("<div>Hello worl!!d!</div>")})}],[2]);
+//# sourceMappingURL=app.271759.js.map
