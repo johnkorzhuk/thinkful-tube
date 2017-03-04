@@ -1,16 +1,17 @@
 import $ from 'jquery'
-import './css/style.css'
 
-$(function () {
-  $.get(
-    'https://www.googleapis.com/youtube/v3/search',
-    { 
-      part: 'snippet',
-      key: 'AIzaSyCGN6oR8rDeUMXD0dVXFNehwE1m9z4bolY',
-      q: 'pewdiepie'
-    },
-    (data) => console.log(data)
-  )
+import getData from './js/util/getData'
+import renderFig from './js/components/renderFig'
+import { getVideoThumbnails, setResults } from './state'
+
+$(() => {
+  $('.js-search-form').submit((e) => {
+    e.preventDefault()
+    const query = $('.js-search').val()
+
+    getData(query).then((data) => {
+      setResults(data.items)
+      $('.js-results').html(renderFig(getVideoThumbnails()))
+    }).catch((e) => console.log(e))
+  })
 })
-
-
