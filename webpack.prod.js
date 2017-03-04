@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlguin = require('extract-text-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -37,6 +38,9 @@ module.exports = {
     new CleanWebpackPlugin([ 'dist' ]),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest']
+    }),
+    new Dotenv({
+      path: './.env'
     })
   ]
 }

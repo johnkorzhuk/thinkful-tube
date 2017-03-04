@@ -1,5 +1,7 @@
 import $ from 'jquery'
 
+const { API_KEY } = process.env
+
 export default (query) =>
   new Promise((resolve, reject) => {
     $.ajax({
@@ -7,7 +9,7 @@ export default (query) =>
       url: 'https://www.googleapis.com/youtube/v3/search',
       data: {
         part: 'snippet',
-        key: 'AIzaSyCGN6oR8rDeUMXD0dVXFNehwE1m9z4bolY',
+        key: API_KEY,
         q: query
       },
       success (data) {
